@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>自然有咖咖啡 · 开业营销方案（V3 品质版）</title>
+<style>
+: content here>
+<style>
+:root {
+  --coffee-brown: #4A3428;
+  --coffee-light: #8B6B4A;
+  --cream: #F5EDE0;
+  --matcha: #7BA881;
+  --berry: #D4596B;
+  --gold: #D4A854;
+  --mt-green: #FFC300;
+  --mt-green-dark: #FFB800;
+  --mt-blue: #2E77D0;
+  --snow: #FDF8F2;
+  --text: #2D2416;
+  --text-light: #8A7A6A;
+  --shadow: rgba(74,52,40,0.1);
+  --radius: 12px;
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Noto Sans SC', sans-serif;
+  background: var(--snow);
+  color: var(--text);
+  line-height: 1.7;
+}
+.header {
+  background: linear-gradient(135deg, #1A0F0A 0%, #3A2418 40%, #5A3A28 70%, #7 70%, #7A5A42 100%);
+  padding: 4rem 1.5rem 3rem;
+  text-align: center;
+  color: var(--cream);
+  position: relative;
+  overflow: hidden;
+}
+.header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 40%, rgba(212,168,84,0.08) 0%, transparent 70%);
+}
+.header::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--gold), var(--coffee-light), var(--gold));
+}
+.header-content { position: relative; z-index: 1; }
+.header h1 { font-size: clamp(2rem, 6vw, 3.2rem); font-weight: 700; margin-bottom: 0.3rem; letter-spacing: 3px; }
+.header .subtitle { font-size: clamp(0.9rem, 2.5vw, 1.2rem); opacity: 0.8; font-weight: 300; letter-spacing: 6px; margin-bottom: 0.8rem; }
+.header .tagline { display: inline-block; background: rgba(245,237,224,0.12); border: 1px solid rgba(245,237,224,0.2); padding: 0.3rem 1.2rem; border-radius: 20px; font-size: 0.78rem; letter-spacing: 2px; }
+.header .tagline .mt { color: #FFD700; font-weight: 700; }
+.header .quality-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(212,168,84,0.12);
+  border: 1px solid rgba(212,168,84,0.25);
+  padding: 0.4rem 1.2rem;
+  border-radius: 20px;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+.header .quality-badge .q { font-weight: 700; color: var(--gold); }
+.header .stats { display: flex; justify-content: center; gap: 2.5rem; margin-top: 1.5rem; flex-wrap: wrap; }
+.header .stat-item { text-align: center; }
+.header .stat-num { font-size: 1.4rem; font-weight: 700; color: var(--gold); }
+.header .stat-label { font-size: 0.72rem; opacity: 0.65; margin-top: 0.2rem; }
+
+.container { max-width: 900px; margin: 0 auto; padding: 0 1.5rem; }
+
+.section { padding: 2.5rem 0; border-bottom: 1px solid rgba(74,52,40,0.06); }
+.section:last-child { border-bottom: none; }
+.section-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem; }
+.section-number { background: var(--coffee-brown); color: var(--cream); width: 32px; height: 32px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; font-weight: 700; flex-shrink: 0; }
+.section-header h2 { font-size: 1.2rem; font-weight: 700; color: var(--coffee-brown); }
+.section-header h2 span { color: var(--text-light); font-weight: 400; font-size: 0.85rem; margin-left: 0.5rem; }
+
+.card { background: white; border: 1px solid rgba(74,52,40,0.08); border-radius: var --radius); padding: 1.3rem; margin-bottom: 0.8rem; box-shadow: 0 2px 8px rgba(74,52,40,0.04); }
+.card h3 { font-size: 0.95rem; font-weight: 700; color: var(--coffee-brown); margin-bottom: 0.6rem; display: flex; align-items: center; gap: 0.5rem; }
+.card ul { list-style: none; padding: 0; }
+.card ul li { position: relative; padding-left: 1.1rem; margin-bottom: 0.35rem; font-size: 0.85rem; line-height: 1.6; color: var(--text); }
+.card ul li::before { content: '•'; position: absolute; left: 0; color: var(--coffee-light); }
+
+.grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 0.8rem; }
+.grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.8rem; }
+.grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 0.8rem; }
+@media (max-width: 768px) { .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; } }
+
+.highlight { background: linear-gradient(135deg, rgba(212,168,84,0.06), rgba(212,168,84,0.02)); border-left: 3px solid var(--gold); padding: 0.8rem 1rem; border-radius: 0 var(--radius); margin: 0.8rem 0; font-size: 0.85rem; }
+.highlight strong { color: var(--coffee-brown); }
+
+.quality-box {
+  background: linear-gradient(135deg, rgba(74,52,40,0.04), rgba(212,168,84,0.04));
+  border: 1px solid rgba(212,168,84,0.2);
+  border-radius: var(--radius);
+  padding: 1.2rem;
+  margin: 0.8rem 0;
+}
+.quality-box h3 { color: var(--coffee-brown); font-size: 0.95rem; margin-bottom: 0.6rem; }
+.quality-box h3 .q-icon { color: var(--gold); }
+
+.tag { display: inline-block; padding: 0.15rem 0.7rem; border-radius: 10px; font-size: 0.72rem; font-weight: 600; margin-right: 0.3rem; margin-bottom: 0.3rem; }
+.tag-green { background: rgba(123,168,129,0.15); color: #4A7A51; }
+.tag-red { background: rgba(212,89,107,0.12); color: #B24454; }
+.tag-gold { background: rgba(212,168,84,0.15); color: #8B6B30; }
+.tag-brown { background: rgba(74,52,40,0.1); color: var(--coffee-brown); }
+.tag-mt { background: rgba(255,195,0,0.15); color: #B28400; }
+.tag-quality { background: rgba(212,168,84,0.2); color: #6B4A1 4A1A; }
+
+.table-wrap { overflow-x: auto; }
+table.data { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
+table.data th { background: var(--coffee-brown); color: var(--cream); padding: 0.5rem 0.8rem; text-align: left; font-weight: 600; }
+table.data td { padding: 0.45rem 0.8rem; border-bottom: 1px solid rgba(74,52,40,0.06); }
+table.data tr:nth-child(even) td { background: rgba(245,237,224,0.3); }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.8rem; }
+.kpi-card { text-align: center; padding: 1.2rem 0.8rem; background: white: border-radius: var(--radius); border: 1px solid rgba(74,52,40,0.08); box-shadow: 0 2px 8px rgba(74,52,40,0.04); transition: transform 0.2s; }
+.kpi-card:hover { transform: translateY(-2px); }
+.kpi-icon { font-size: 1.3rem; margin-bottom: 0.2rem; }
+.kpi-num { font-size: 1.4rem; font-weight: 700; color: var(--coffee-brown); }
+.kpi-num .unit { font-size: 0.75rem; font-weight: 400; color: var(--text-light); }
+.kpi-label { font-size: 0.72rem; color: var(--text-light); margin-top: 0.15rem; }
+
+.timeline { position: relative; padding-left: 1.8rem; }
+.timeline::before { content: ''; position: absolute; left: 7px; top: 0; bottom: 0; width: 2px; background: linear-gradient(to bottom, var(--gold), var(--coffee-light), transparent); }
+.timeline-item { position: relative; padding-bottom: 1.2rem; }
+.timeline-item::before { content: ''; position: absolute; left: -1.5rem; top: 0.3rem; width: 10px; height: 10px; border-radius: 50%; background: var(--gold); border: 2px solid var(--snow); }
+.timeline-item:last-child { padding-bottom: 0; }
+.tl-title { font-weight: 700; color: var(--coffee-brown); font-size: 0.9rem; }
+.tl-desc { font-size: 0.8rem; color: var(--text-light); margin-top: 0.15rem; }
+
+.footer { text-align: center; padding: 2rem 1.5rem; color: var(--text-light); font-size: 0.78rem; border-top: 1px solid rgba(74,52,40,0.06); }
+
+.price-card { text-align: center; padding: 1rem; background: white; border-radius: var(--radius); border: 2px solid rgba(74,52,40,0.08); }
+.price-card.featured { border-color: var(--gold); box-shadow: 0 4px 16px rgba(212,168,84,0.12); }
+.price-card .p-name { font-weight: 600; color: var(--coffee-brown); font-size: 0.85rem; }
+.price-card .p-price { font-size: 1.6rem; font-weight: 700; color: var(--coffee-brown); margin: 0.2rem 0; }
+.price-card .p-price .y { font-size: 0.9rem; font-weight: 400; }
+.price-card .p-price .old { font-size: 0.8rem; font-weight: 400; color: var(--text-light); text-decoration: line-through; margin-right: 0.3rem; }
+.price-card .p-desc { font-size: 0.72rem; color: var(--text-light); }
+.price-card .p-tag { display: inline-block; padding: 0.1rem 0.5rem; border-radius: 8px; font-size: 0.65rem; font-weight: 600; margin-top: 0.3rem; }
+
+.mt-box { background: linear-gradient(135deg, rgba(255,195,0,0.06), rgba(46,119,208,0.04)); border: 1px solid rgba(255,195,0,0.2); border-radius: var(--radius); padding: 1rem; margin: 0.8rem 0; }
+.mt-box h3 { color: #4A3428: }
+.mt-box h3 .mt-icon { color: #FFC300; }
+
+@media (max-width: 640px) {
+  .container { padding: 0 1rem; }
+  .card { padding: 1rem; }
+  .grid-2, .grid-3, .grid-4 { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-content">
+    <div class="tagline">🥤 新城家园菜市场口 · 10㎡ · <span class="mt">美团智能版收银</span>赋能</div>
+    <h1>自然有咖咖啡</h1>
+    <div class="subtitle">用好豆子 · 做良心生意</div>
+    <p style="max-width:560px;margin:0.8rem auto 0;opacity:0.7;font-size:0.85rem;">
+      咖啡豆成本 <strong>¥4/杯</strong> · 咖啡果茶<strong>¥12</strong> · 甜筒<strong>¥4.9</strong> · 好料给孩子吃
+    </p>
+    <div class="quality-badge">
+      <span class="q">✦</span> 品质即尊严 · 小店的长期主义 <span class="q">✦</span>
+    </div>
+    <div class="stats">
+      <div class="stat-item"><div class="stat-num">🏫</div><div class="stat-label">学生线下</div></div>
+      <div class="stat-item"><div class="stat-num">📱</div><div class="stat-label">外卖团购</div></div>
+      <div class="stat-item"><div class="stat-num">💳</div><div class="stat-label">智能收银触达</div></div>
+      < div="stat-item"><div class="stat-num">✦</div><div class="stat-label">品质为根</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- ===== 01 品质定位 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">01</div><h2>品质定位 <span>· 小店≠低质，用好料做长期生意</span></h2></div>
+  <div class="quality-box">
+    <h3><span class="q-icon">✦</span> 自然有咖的品质坚持</h3>
+    <div class="grid-3">
+      <div>
+        <div class="tag tag-quality">☕ 咖啡豆成本 ¥4/杯</div>
+        <ul>
+          <li>优质咖啡豆，比连锁高一个档次</li>
+          <li><strong>咖啡豆成本¥4/杯，卖¥12-15不贵</strong></li>
+          <li>现磨现做，新鲜出品</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tag tag-quality">🍹 果茶原料</div>
+        <ul>
+          <li>鲜果+优质茶底</li>
+          <li>不添加香精色素</li>
+          <li>孩子喝的，不能马虎</li>
+        </ul>
+      </div>
+      <div>
+        <div class="tag tag-quality">🍦 冰淇淋粉</div>
+        <ul>
+          <li>选用高品质原料</li>
+          <li>口感细腻不甜腻</li>
+          <li>学生吃着放心</li>
+        </ul>
+      </div>
+    </div>
+    <div style="margin-top:0.8rem;padding-top:0.6rem;border-top:1px solid rgba(212,168,84,0.2);font-size:0.82rem;">
+      <strong>品牌店卖名气，自然有咖卖良心</strong> — 咖啡豆¥4/杯用好豆，¥12亲民价不心疼
+    </div>
+  </div>
+</div>
+
+<!-- ===== 02 定价策略 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">02</div><h2>定价策略 <span>· 成本¥6-7，卖¥12走量还能赚</span></h2></div>
+  <div class="card">
+    <div class="grid-3">
+      <div class="price-card featured">
+        <div class="tag tag-brown">☕ 咖啡线</div>
+        <div class="p-name">美式/拿铁/生椰/澳白</div>
+        <div class="p-price">¥12</div>
+        <div class="p-desc">咖啡豆成本¥4/杯用好豆<br>成本含包装≈¥6.5</div>
+        <div class="p-tag tag-gold">走量核心</div>
+      </div>
+      <div class="price-card">
+        <div class="tag tag-green">🍹 果茶线</div>
+        <div class="p-name">鲜柠绿/百香果/葡萄冰茶</div>
+        <div class="p-price">¥12</div>
+        <div class="p-desc">好原料做的果茶<br>成本含包装≈¥6-7</div>
+        <div class="p-tag tag-green">学生走量</div>
+      </div>
+      <div class="price-card">
+        <div class="tag tag-red">🍦 冰淇淋线</div>
+        <div class="p-name">甜筒/杯装</div>
+        <div class="p-price">¥4.9</div>
+        <div class="p-desc">高品质原料<br>成本含包装≈¥3</div>
+        <div class="p-tag tag-red">视觉钩子</div>
+      </div>
+    </div>
+  </div>
+  <div class="highlight">
+    <strong>💰 成本账</strong>：咖啡/果茶成本¥6-7/杯（含包装），卖¥12 → <strong>每杯毛利¥5-6（≈42-50%）</strong><br>
+    走量测算：日均100杯×¥5.5毛利×30天 = <strong>月毛利¥16,500</strong>（10㎡小店稳得很）<br>
+    <strong>关键</strong>：菜市场口+学校隔壁 = 自然流量够大，¥12定价走量又赚钱
+  </div>
+</div>
+
+
+<!-- ===== 03 美团智能版收银系统 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">03</div><h2>美团智能版收银系统 <span>· 统一管线上线下</span></h2></div>
+  <div class="mt-box">
+    <h3>🛠️ <span class="mt-icon">推荐：智能版 + 迷你收银机，10㎡不占地</span></h3>
+    <p style="font-size:0.85rem;margin:0.5rem 0;">
+      收银+核销+外卖接单+扫码点餐+移动APP，小机器全搞定
+    </p>
+  </div>
+  <div class="grid-2">
+    <div class="card">
+      <h3>📌 系统能做什么</h3>
+      <ul>
+        <li><strong>收银点餐</strong> — 正餐/快餐模式任意切换</li>
+        <li><strong>团购核销</strong> — 一键核销美团/抖音等各平台团购券</li>
+        <li><strong>外卖对接</strong> — 美团外卖免费对接，后厨自动分单</li>
+        <li><strong>扫码点餐</strong> — 顾客扫码点餐，自动核销团购券</li>
+        <li><strong>移动管理</strong> — 手机美团管家APP，随时看数据</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>🎯 核心价值：触达每一个顾客</h3>
+      <ul>
+        <li><strong>团购来的</strong> → 核销时自动注册会员 → 后续可推送优惠券</li>
+        <li><strong>外卖点的</strong> → 订单数据沉淀 → 可定向发复购券</li>
+        <li><strong>到店买的</strong> → 扫码加群/办储值 → 锁客复购</li>
+        <li>所有线上线下顾客 <strong>一次触达，终身可追</strong></li>
+      </ul>
+    </div>
+  </div>
+  <div class="highlight">
+    <strong>核心一句话</strong>：不管顾客从哪儿来（团购/外卖/到店），智能版软件都能<strong>记下来、找到他、让他再来</strong>
+  </div>
+</div>
+<!-- ===== 04 线下策略 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">04</div><h2>线下策略 <span>· 学生放学经济</span></h2></div>
+  <div class="card">
+    <h3>🏫 放学时段（工作日16:00-18:00）</h3>
+    <ul>
+      <li><strong>果茶¥12 / 冰淇淋¥4.9</strong> — 学生零花钱够得着</li>
+      <li><strong>学生专属</strong>：穿校服 → 果茶第二杯半价</li>
+      <li><strong>门口小黑板</strong>："放学啦！果茶¥12🍹"</li>
+      <li><strong>到店即注册会员</strong>：收银机扫码 → 自动注册 → 领¥2券 → 下次直接用</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 05 线上策略 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">05</div><h2>线上策略 <span>· 外卖+团购双引擎</span></h2></div>
+  <div class="card">
+    <h3>📱 美团外卖</h3>
+    <div class="grid-2">
+      <div>
+        <h3 style="font-size:0.85rem;">🌍 运营方案</h3>
+        <ul>
+          <li><strong>主推咖啡</strong>：美式/拿铁 ¥12-15（外卖主力）</li>
+          <li><strong>覆盖范围</strong>：周边1-2公里（小区+学校+写字楼）</li>
+          <li><strong>新客立减</strong>：首单减¥5</li>
+          <li><strong>满减</strong>：¥25减¥3 / ¥40减¥6</li>
+          <li><strong>配送费优惠</strong>：满¥15免配送</li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-size:0.85rem;">🎯 智能复购玩法</h3>
+        <ul>
+          <li>外卖顾客下单 → 系统自动记录 → 3天后推送复购券</li>
+          <li>"您上次点的拿铁，今天回来减¥3"</li>
+          <li>新品上线 → 定向推送给历史外卖顾客</li>
+          <li>雨天/降温 → 推送热饮优惠（系统可设自动化）</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>🛒 美团团购</h3>
+    <table class="data">
+      <tr><th>套餐</th><th>内容</th><th>定价</th><th>策略</th></tr>
+      <tr><td>☕ 单人咖啡套餐</td><td>美式+冰淇淋球</td><td>¥13.9</td><td>引流尝鲜</td></tr>
+      <tr><td>🍹 双人果茶</td><td>果茶2杯</td><td>¥16.9</td><td>学生拼单</td></tr>
+      <tr><td>🥤 放学快乐</td><td>果茶+甜筒</td><td>¥12.9</td><td>刚需走量</td></tr>
+      <tr><td>☕ 精品单品咖啡</td><td>美式/拿铁/生椰</td><td>¥12</td><td>走量核心</td></tr>
+    </table>
+    <div style="margin-top:0.5rem;font-size:0.8rem;">
+      ✅ 团购核销 → 智能收银自动记录会员 → 后续推送复购券（合规收藏打卡引导）
+    </div>
+  </div>
+</div>
+
+<!-- ===== 06 智能收银复购系统 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">06</div><h2>智能复购系统 <span>· 美团智能版核心武器</span></h2></div>
+  <div class="quality-box">
+    <h3><span class="q-icon">🎯</span> 顾客全渠道触达链路</h3>
+    <div style="display:flex;flex-direction:column;gap:0.6rem;margin-top:0.5rem;">
+      <div style="padding:0.6rem 1rem;background:white;border-radius:8px;border-left:3px solid var(--gold);font-size:0.85rem;">
+        <strong>🛒 团购顾客</strong> → 核销时扫码注册会员 → 系统记录消费偏好 → 3天后推送专属优惠券
+      </div>
+      <div style="padding:0.6rem 1rem;background:white;border-radius:8px;border-left:3px solid var(--mt-blue);font-size:0.85rem;">
+        < 85rem;">
+        <strong>📦 外卖顾客</strong> → 订单自动沉淀 → 智能分析消费习惯 → 定向发复购券/新品推送
+      </div>
+      <div style="padding:0.6rem 1rem;background:white;border-radius:8px;border-left:3px solid var(--matcha);font-size:0.85rem;">
+        <strong>🏪 到店顾客</strong> → 收银引导加群/储值 → 群内每周福利 → 储值锁定回头客
+      </div>
+    </div>
+  </div>
+  <div class="card">
+    <h3>📊 会员营销三板斧</h3>
+    <table class="data">
+      <tr><th>玩法</th><th>设置</th><th>目标</th></tr>
+      <tr><td>① 储值赠额</td><td>充¥50赠¥5 / 充¥100赠¥15</td><td>锁客+提前回笼资金</td></tr>
+      <tr><td>② 积分体系</td><td>¥1=1分 · 50分抵¥5</td><td>提高复购频次</td></tr>
+      <tr><td>③ 智能推送</td><td>系统自动给沉默顾客发券</td><td>唤醒流失顾客</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== 07 合规 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">07</div><h2>合规运营 <span>· 红线不碰</span></h2></div>
+  <div class="card">
+    <ul>
+      <li>❌ 禁止以任何形式诱导好评/评价（好评返现、写评赠品等）</li>
+      <li>❌ 禁止刷单、虚假交易</li>
+      <li>✅ 仅允许引导收藏店铺、打卡到店</li>
+      <li>✅ 智能版推送优惠券 → 引导复购（合规）</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== 08 节奏 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">08</div><h2>节奏规划 <span>· 30天</span></h2></div>
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="tl-title">🏗️ 准备期 <span style="font-weight:400;color:var(--text-light);">D-10~D-7</span></div>
+      <div class="tl-desc">安装美团智能版收银系统 · 录入菜品 · 配置外卖/团购菜单 · 门头灯箱+小黑板</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-title">📣 预热期 <span style="font-weight:400;color:var(--text-light);">D-7~D-1</span></div>
+      <div class="tl-desc">外卖/团购上线 · 设置新客立减 · 社群预热红包 · 门口围挡预告</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-title">🎊 开业引爆 <span style="font-weight:400;color:var(--text-light);">D~D+3</span></div>
+      <div class="tl-desc">¥1美式限50杯 · 果茶买①赠① · 学生冰淇淋¥2.9尝鲜 · 外卖新客减¥5</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-title">📈 积累期 <span style="font-weight:400;color:var(--text-light);">D+4~D+14</span></div>
+      <div class="tl-desc">智能版数据报表看销售排行/时段分布 · 会员推送首次复购券 · 收集反馈</div>
+    </div>
+    <div class="timeline-item">
+      <div class="tl-title">🌱 稳定期 <span style="font-weight:400;color:var(--text-light);">D+15~D+30</span></div>
+      <div class="tl-desc">储值卡上线 · 智能推送沉默唤醒 · 每周新品轮换 · 品质口碑沉淀</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 10 KPI ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">10</div><h2>KPI <span>· 首月指标</span></h2></div>
+  <div class="kpi-grid">
+    <div class="kpi-card"><div class="kpi-icon">☕</div><div class="kpi-num">¥12<span class="unit">-15</span></div><div class="kpi-label">咖啡客单价</div></div>
+    <div class="kpi-card"><div class="kpi-icon">🥤</div><div class="kpi-num">35<span class="unit">杯/天</span></div><div class="kpi-label">日均销量</div></div>
+    <div class="kpi-card"><div class="kpi-icon">📱</div><div class="kpi-num">50<span class="unit">%</span></div><div class="kpi-label">外卖占比</div></div>
+    <div class="kpi-card"><div class="kpi-icon">⭐</div><div class="kpi-num">200<span class="unit">+</span></div><div class="kpi-label">收藏量</div></div>
+    <div class="kpi-card"><div class="kpi-icon">👥</div><div class="kpi-num">100<span class="unit">人</span></div><div class="kpi-label">会员储值</div></div>
+    <div class="kpi-card"><div class="kpi-icon">💰</div><div class="kpi-num">¥10<span class="unit">,000-15,000</span></div><div class="kpi-label">首月流水</div></div>
+  </div>
+</div>
+
+<!-- ===== 11 话术 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">11</div><h2>话术 <span>· 卖品质不卖廉价</span></h2></div>
+  <div class="card">
+    <table class="data">
+      <tr><th>场景</th><th>话术</th></tr>
+      <tr><td>学生放学路过</td><td>"同学，果茶¥12起，用好茶叶鲜果做的，尝尝？"</td></tr>
+      <tr><td>顾客犹豫价格</td><td>"我们家豆子比连锁店好一档，你喝一口就知道值不值"</td></tr>
+      <tr><td>外卖取餐</td><td>"这杯拿铁用的豆子是XX产区的，您尝尝，好喝记得收藏店铺" ✅</td></tr>
+      <tr><td>结账办会员</td><td>"办个储值充50送5块，以后来不用带钱，手机一扫就行"</td></tr>
+      <tr><td>冰淇淋出杯</td><td>"给孩子吃的，我们用的都是好粉，您放心"</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== 12 收银流程 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">12</div><h2>收银流程 <span>· 美团智能版操作闭环</span></h2></div>
+  <div class="card">
+    <table class="data">
+      <tr><th>场景</th><th>操作</th><th>系统联动</th></tr>
+      <tr><td>① 到店购买</td><td>收银机选品 → 扫码收款</td><td>聚合支付 → 积分累计</td></tr>
+      <tr><td>② 团购核销</td><td>顾客出示券码 → 扫一下自动核销</td><td>团购数据同步 → 会员自动注册</td></tr>
+      <tr><td>③ 外卖接单</td><td>自动接单 → 后厨打单 → 打包</td><td>订单沉淀 → 可发复购券</td></tr>
+      <tr><td>④ 会员注册</td><td>扫码注册 → 领¥3券</td><td>后续可精准触达</td></tr>
+      <tr><td>⑤ 储值充值</td><td>充¥50赠¥5</td><td>锁客+资金回笼</td></tr>
+      <tr><td>⑥ 复购推送</td><td>系统自动给沉默顾客发券</td><td>智能版核心功能</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- ===== 13 总结 ===== -->
+<div class="section">
+  <div class="section-header"><div class="section-number">13</div><h2>总结 <span>· 小店的大逻辑</span></h2></div>
+  <div class="card" style="background:inear-gradient(135deg, rgba(74,52,40,0.03), rgba(212,168,84,0.05));border-color:rgba(212,168,84,0.2);">
+    <div class="grid-3" style="margin-top:0.3rem;">
+      <div style="text-align:center;">
+        <div style="font-size:1.6rem;">✦</div>
+        <div style="font-weight:700;font-size:0.9rem;">品质立命</div>
+        <div style="font-size:0.75rem;color:var(--text-light);">好豆子好原料·孩子放心喝</div>
+      </div>
+      <div style="text-align:center;">
+        <div style="font-size:1.6rem;">📱</span></div>
+        <div style="font-size:0.75rem:center;">
+        <div style="font-size:1.6rem;">💳</div>
+        <div style="font-weight:700;font-size:0.9rem;">智能触达</div>
+        <div style="font-size:0.75rem;color:var(--text-light);">智能版mini精准触达·每个顾客都能追回来</div>
+      </div>
+    </div>
+    <div style="margin-top:1rem;padding-top:0.8rem;border-top:1px solid rgba(74,52,40,0.08);font-size:0.85rem;text-align:center;">
+      💡 <strong>菜市场口的10㎡小店，用好豆子做好咖啡，用好系统管好顾客，用好口碑留住人心</strong>
+    </div>
+  </div>
+</div>
+
+</div>
+
+<div class="footer">
+  <p>自然有咖咖啡 · 开业营销方案（美团智能版收银专版）</p>
+  <p>📍 新城家园菜市场门口 · 用好料做长期生意</p>
+</div>
+
+</body>
+</html>
